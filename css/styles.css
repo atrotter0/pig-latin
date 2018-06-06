@@ -5,3 +5,7 @@ h4 {
 button {
   margin-top: 20px;
 }
+
+#results-box {
+  display: none;
+}

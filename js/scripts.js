@@ -50,7 +50,7 @@ function toPigLatin(wordsArray) {
     }
     pieces = [];
   }
-  console.log(finishedWords);
+  return finishedWords.join(" ");
 }
 
 function removePunctuation(wordList) {
@@ -67,8 +67,6 @@ function removePunctuation(wordList) {
 }
 
 function addWayToEnd(word) {
-  //add way to the end of string
-  console.log("add way to end of the word");
   return word + "way";
 }
 
@@ -88,7 +86,9 @@ function addAyToEnd(word) {
 }
 
 function displayResult(result) {
-  //display results
+  $("#pig-latin").hide();
+  $("#results-box").fadeIn(800);
+  $("#results").text(result);
 }
 
 // UI Logic
@@ -98,6 +98,11 @@ $(document).ready(function() {
     var userInput = $("#input").val();
     var words = getPhrase(userInput);
     var result = toPigLatin(words);
-    // displayResult(result);
+    console.log(result);
+    displayResult(result);
+  });
+
+  $("#try-again").click(function() {
+    location.reload();
   });
 });
