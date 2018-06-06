@@ -1,6 +1,6 @@
 BDD specs (input / output)
 
-1. it does nothing to non-alphabetical characters (3 / 3) +
+1. it does nothing to non-alphabetical characters (3 / 3) 
 2. it adds "ay" to single letter words beginning with vowel (i / iay)
 3. it adds "way" to end of words beginning with vowel (apple / appleway)
   - words beginning with "y" should treat the first (and only first) y as a consonant (yes / esy)

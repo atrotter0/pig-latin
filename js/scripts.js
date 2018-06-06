@@ -17,8 +17,9 @@ function parseWords(wordsArray) {
   for(var i = 0; i < wordsArray.length; i++) {
     var lettersArray = wordsArray[i].split("");
 
-    if (VOWELS.includes(lettersArray[0])) {
+    if (VOWELS.includes(lettersArray[0]) && lettersArray[0] !== "y") {
       var newWord = addWayToEnd(wordsArray[i]);
+      console.log(newWord);
     }
 
     lettersArray.forEach(function(letter) {
@@ -30,6 +31,7 @@ function parseWords(wordsArray) {
 function addWayToEnd(word) {
   //add way to the end of string
   console.log("add way to end of the word");
+  return word + "way";
 }
 
 function displayResult(input) {
