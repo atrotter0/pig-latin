@@ -2,7 +2,7 @@
 
 #### Epicodus Intro to Programming lesson, 06/06/2018
 
-#### By Abel Trotter & Eli Maimon
+#### By Abel Trotter & Elly Maimon
 
 ## Description
 
@@ -28,4 +28,4 @@ Enter a phrase to have it converted to Pig Latin. Built with BDD approach using 
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Abel Trotter and Eli Maimon**
+Copyright (c) 2018 **Abel Trotter and Elly Maimon**
