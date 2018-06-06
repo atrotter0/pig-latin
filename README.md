@@ -1,12 +1,12 @@
-# Project Title
+# Pig Latin
 
-#### Epicodus Intro to Programming: Lesson, Date
+#### Epicodus Intro to Programming lesson, 06/06/2018
 
-#### By NAME
+#### By Abel Trotter & Eli Maimon
 
 ## Description
 
-
+Enter a phrase to have it converted to Pig Latin. Built with BDD approach using JS, jQuery, and Bootstrap.
 
 ## Setup/Contribution Requirements
 
@@ -17,15 +17,15 @@
 
 ## Technologies Used
 
-* Bootstrap x.x.x
+* HTML/CSS
+* JavaScript
+* Bootstrap 3.3.7
 * jQuery 3.3.1
 
 ## Links
-
-* 
 
 ## License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Name**
+Copyright (c) 2018 **Abel Trotter and Eli Maimon**
