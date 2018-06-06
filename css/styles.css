@@ -1,11 +1,52 @@
-h4 {
-  margin-bottom: 40px;
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+img {
+  margin: 25px auto;
+  display: block;
+  box-shadow: 1px 1px 10px #ada4a4;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 1px 1px #ada4a4;
+}
+
+h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#pig-latin {
+  text-align: center;
+  margin: 0 auto;
 }
 
 button {
   margin-top: 20px;
 }
 
+#input {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 50px;
+  font-size: 24px;
+}
+
 #results-box {
   display: none;
+  margin: 0 auto;
+}
+
+#results {
+  font-size: 36px;
+  text-align: center;
+}
+
+#try-again {
+  display: block;
+  margin: 20px auto;
 }

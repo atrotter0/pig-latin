@@ -2,9 +2,7 @@ const VOWELS = ["a", "e", "i", "o", "u", "y"];
 
 //Business Logic
 function getPhrase(input) {
-  console.log("Input: " + input);
   var words = parsePhrase(input);
-  console.log("Words: " + words);
   return words;
 }
 
@@ -15,46 +13,39 @@ function parsePhrase(userInput) {
 
 function toPigLatin(wordsArray) {
   var finishedWords = [];
-  var pieces = [];
   wordsArray = removePunctuation(wordsArray);
   for(var i = 0; i < wordsArray.length; i++) {
+    var pieces = [];
     if (!isNaN(parseInt(wordsArray[i]))) {
       finishedWords.push(wordsArray[i]);
       continue;
     }
     var lettersArray = wordsArray[i].split("");
-    console.log("letters array: " + lettersArray);
-    for(var j = 0; j < lettersArray.length; j++) {
-      console.log(pieces);
-      if (VOWELS.includes(lettersArray[0]) && lettersArray[0] !== "y") {
-        var newWord = addWayToEnd(wordsArray[i]);
-        console.log(newWord);
-        finishedWords.push(newWord);
-        break;
-      } else if (!VOWELS.includes(lettersArray[j]) && lettersArray[j] === "q" && lettersArray[j + 1] === "u") {
-        pieces.push(lettersArray[j], lettersArray[j + 1]);
-        var newWord = createWord(pieces, wordsArray[i]);
-        finishedWords.push(newWord);
-        break;
-      } else if (!VOWELS.includes(lettersArray[j]) || lettersArray[0] === "y") {
-        pieces.push(lettersArray[j]);
-        var newWord = createWord(pieces, wordsArray[i]);
-        finishedWords.push(newWord);
-        break;
-      } else if (VOWELS.includes(lettersArray[j])) {
-        var newWord = createWord(pieces, wordsArray[i]);
-        finishedWords.push(newWord);
-        break;
-        console.log("New word: " + newWord);
-      }
+    if (wordsArray[i][0] === "s" && wordsArray[i][1] === "q" && wordsArray[i][2] === "u") {
+      pieces.push(wordsArray[i][0], wordsArray[i][1], wordsArray[i][2]);
+      var newWord = createWord(pieces, wordsArray[i]);
+      finishedWords.push(newWord);
+    } else if (!VOWELS.includes(wordsArray[i][0]) && wordsArray[i][0] === "q" && wordsArray[i][1] === "u") {
+      pieces.push(wordsArray[i][0], wordsArray[i][1]);
+      var newWord = createWord(pieces, wordsArray[i]);
+      finishedWords.push(newWord);
+    } else if (!VOWELS.includes(wordsArray[i][0]) || wordsArray[i][0] === "y") {
+      pieces.push(wordsArray[i][0]);
+      var newWord = createWord(pieces, wordsArray[i]);
+      finishedWords.push(newWord);
+    } else if (VOWELS.includes(wordsArray[i][0]) && wordsArray[i][0] !== "y") {
+      var newWord = addWayToEnd(wordsArray[i]);
+      finishedWords.push(newWord);
+    } else if (VOWELS.includes(wordsArray[i][0])) {
+      var newWord = createWord(pieces, wordsArray[i]);
+      finishedWords.push(newWord);
     }
-    pieces = [];
   }
   return finishedWords.join(" ");
 }
 
 function removePunctuation(wordList) {
-  var pattern = /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
+  var pattern = /[-!$%#@^&*()_+|~=`{}\[\]:";'<>?,.\/]/;
   var newList = wordList.map(function(word) {
     var position = word.search(pattern);
     if (position >= 0) {
@@ -98,7 +89,6 @@ $(document).ready(function() {
     var userInput = $("#input").val();
     var words = getPhrase(userInput);
     var result = toPigLatin(words);
-    console.log(result);
     displayResult(result);
   });
 
